@@ -1,25 +1,25 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
 
-import { MovieListing } from '../../components'
-import { getMovies, getShows } from '../../redux/movieSlice'
+import {MovieListing} from "../../components";
+import {getMovies, getShows} from "../../redux/movieSlice";
 
 const Home = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const movieText = 'Mission'
-  const showText = 'Office'
+  const movieText = "Fast";
+  const showText = "Office";
 
   useEffect(() => {
-    dispatch(getMovies(movieText))
-    dispatch(getShows(showText))
-  }, [dispatch])
+    dispatch(getMovies(movieText));
+    dispatch(getShows(showText));
+  }, [dispatch]);
 
   return (
-    <div className='banner-image'>
+    <div className="banner-image">
       <MovieListing />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
