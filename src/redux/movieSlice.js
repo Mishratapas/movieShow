@@ -6,19 +6,18 @@ import {MovieApiKey} from "../common/Api/MovieApiKey";
 export const getMovies = createAsyncThunk(
   "movies/getMovies",
   async (values) => {
-    // const MovieText = 'Harry Potter'
+    const MovieText = "Harry Potter";
     const response = await MovieApi.get(
-      // `?apikey=${MovieApiKey}&s=${values}&type=movie`
-      `?apikey=8fc48f54&s=${values}&type=movie`
+      `?apikey=${MovieApiKey}&s=${MovieText}&type=movie`
     );
     return response.data;
   }
 );
 
 export const getShows = createAsyncThunk("shows/getShows", async (values) => {
-  // const showText = 'Office'
+  const showText = "Office";
   const response = await MovieApi.get(
-    `?apikey=${MovieApiKey}&s=${values}&type=series`
+    `?apikey=${MovieApiKey}&s=${showText}&type=series`
   );
   return response.data;
 });
